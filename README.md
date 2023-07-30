@@ -17,7 +17,7 @@ Run:
 ```bash
 !python match_fts.py \
  --input_dir features \
- --numpy_features fts.npy \
+ --feature_filename fts.npy \
  --output_dir matches \
  --numpy_matches matches.npy \
  --numpy_similarity_scores scores.npy \
