@@ -28,6 +28,7 @@ def get_parser():
         help="An output file with the similarity scores in NumPy format.",
     )
     parser.add_argument(
+        "--feature_filename",
         "--numpy_features",
         type=str,
         default="fts.npy",

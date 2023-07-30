@@ -19,7 +19,7 @@ def main():
     Path(params.output_dir).mkdir(parents=True, exist_ok=True)
 
     print('>>> Loading features...')
-    fname = Path(params.input_dir) / params.numpy_features
+    fname = Path(params.input_dir) / params.feature_filename
     if str(fname).lower().endswith(NUMPY_FILE_EXTENSION):
         embeddings = np.load(fname)
     else:
