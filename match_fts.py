@@ -23,7 +23,7 @@ def main():
     if str(fname).lower().endswith(NUMPY_FILE_EXTENSION):
         embeddings = np.load(fname)
     else:
-        embeddings = torch.load(fname)
+        embeddings = torch.load(fname).numpy()
 
     print('>>> Matching features...')
     scores, indices = match_all(embeddings, params.num_neighbors)
