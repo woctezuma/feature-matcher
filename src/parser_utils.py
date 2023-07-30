@@ -31,7 +31,7 @@ def get_parser():
         "--numpy_features",
         type=str,
         default="fts.npy",
-        help="An input file with the featues in NumPy format.",
+        help="An input file with the features in NumPy format.",
     )
     parser.add_argument(
         "--num_neighbors",
