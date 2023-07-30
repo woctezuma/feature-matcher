@@ -2,10 +2,13 @@ import json
 from pathlib import Path
 
 import numpy as np
+import torch
 
 from src.match_utils import match_all
 from src.numpy_utils import save_as_numpy_file
 from src.parser_utils import get_parser
+
+NUMPY_FILE_EXTENSION = ".npy"
 
 
 def main():
@@ -17,7 +20,10 @@ def main():
 
     print('>>> Loading features...')
     fname = Path(params.input_dir) / params.numpy_features
-    embeddings = np.load(fname)
+    if str(fname).lower().endswith(NUMPY_FILE_EXTENSION):
+        embeddings = np.load(fname)
+    else:
+        embeddings = torch.load(fname)
 
     print('>>> Matching features...')
     scores, indices = match_all(embeddings, params.num_neighbors)
