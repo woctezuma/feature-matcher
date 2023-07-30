@@ -16,8 +16,9 @@ pip install -r requirements.txt
 Run:
 ```bash
 !python match_fts.py \
- --output_dir matches --output_filename matches.npy \
- --input_dir features --input_filename fts.npy \
+ --output_dir matches --input_dir features \
+ --numpy_matches matches.npy --numpy_similarity_scores scores.npy \
+ --numpy_features fts.npy \
  --num_neighbors 10
 ```
 
