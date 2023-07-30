@@ -22,6 +22,29 @@ Run:
  --num_neighbors 10
 ```
 
+## Example
+
+For instance, to match features for images in the `balloon` dataset:
+
+```bash
+%cd /content
+!git clone https://github.com/woctezuma/feature-extractor.git
+%cd feature-extractor
+%pip install --quiet -r requirements.txt
+
+!wget https://github.com/matterport/Mask_RCNN/releases/download/v2.1/balloon_dataset.zip
+!unzip -q balloon_dataset.zip
+
+!python extract_fts.py --data_dir balloon
+
+%cd /content
+!git clone https://github.com/woctezuma/feature-matcher.git
+%cd feature-matcher
+%pip install --quiet -r requirements.txt
+
+!python match_fts.py --input_dir /content/feature-extractor/features
+```
+
 ## References
 
 -   A [feature extractor][feature-extractor] for Github repositories which include a `hubconf.py` file.
