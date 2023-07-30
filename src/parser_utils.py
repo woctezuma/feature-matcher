@@ -29,6 +29,7 @@ def get_parser():
     )
     parser.add_argument(
         "--feature_filename",
+        "--torch_features",
         "--numpy_features",
         type=str,
         default="fts.npy",
