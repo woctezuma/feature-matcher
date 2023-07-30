@@ -21,6 +21,9 @@ Run:
  --numpy_features fts.npy \
  --num_neighbors 10
 ```
+The following files will be saved in the `--output_dir` folder: 
+- `matches.npy`: the matched indices (as `np.uint32`) in a NumPy file,
+- `scores.npy`: the similarity scores (as `np.float16`) in a NumPy file.
 
 ## Example
 
