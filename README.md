@@ -16,9 +16,11 @@ pip install -r requirements.txt
 Run:
 ```bash
 !python match_fts.py \
- --output_dir matches --input_dir features \
- --numpy_matches matches.npy --numpy_similarity_scores scores.npy \
+ --input_dir features \
  --numpy_features fts.npy \
+ --output_dir matches \
+ --numpy_matches matches.npy \
+ --numpy_similarity_scores scores.npy \
  --num_neighbors 10
 ```
 The following files will be saved in the `--output_dir` folder: 
